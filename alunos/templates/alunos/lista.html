@@ -1,0 +1,23 @@
+{% extends "alunos/base.html" %}
+
+{% block titulo %}Lista de Alunos{% endblock %}
+
+{% block conteudo %}
+  <h1>Lista de Alunos</h1>
+  <p class="subtitulo">Cuidado: todos eles são reais (mentira).</p>
+
+  <div class="grid">
+    {% for aluno in alunos %}
+      <div class="card">
+        <h3>{{ aluno.nome }}</h3>
+        <span class="curso">{{ aluno.curso }}</span>
+        <p>{{ aluno.descricao }}</p>
+        <a class="btn" href="{% url 'detalhe' aluno.slug %}">Ver detalhes</a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="centro">
+    <a class="btn" href="{% url 'inicio' %}">← Voltar ao início</a>
+  </div>
+{% endblock %}

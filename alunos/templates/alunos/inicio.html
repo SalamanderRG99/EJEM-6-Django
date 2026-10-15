@@ -1,0 +1,9 @@
+{% extends "alunos/base.html" %}
+
+{% block conteudo %}
+  <div style="margin-top: 80px;" class="centro">
+    <h1>Sistema de Alunos</h1>
+    <p class="subtitulo">Onde os melhores (e mais problemáticos) alunos se encontram.</p>
+    <a class="btn" href="{% url 'lista' %}">Ver lista de alunos →</a>
+  </div>
+{% endblock %}
